@@ -32,5 +32,5 @@ Load `dist/manifest.json` through `about:debugging` > This Firefox > Load Tempor
 
 The rules code has unit tests. A real headless Firefox with the extension loaded (config baked in) sent a request through a
 local proxy with the replaced User-Agent, `DNT`/`Sec-GPC` added and `Referer` removed. Not tested: the lookup from a real
-container to its name (`contextualIdentities`), and the options page (Firefox blocks automated opening of extension pages).
+container to its name (`contextualIdentities`), and opening the options page from `about:addons`. The page itself was run as a plain web page in headless Firefox with a stand-in `browser` object: container names listed, a good config saved, a header-injection value, a bad proxy and broken JSON all refused.
 Not possible with this approach: real about:config prefs, `navigator.*` values, WebRTC, per-container tracking protection.

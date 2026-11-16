@@ -21,7 +21,7 @@ async function show() {
 
 document.getElementById('save')!.addEventListener('click', async () => {
   const { errors } = parseConfig(ta.value);
-  msg.textContent = errors.length ? 'Not saved with these problems fixed: ' + errors.join(' | ') : 'Saved.';
+  msg.textContent = errors.length ? 'Not saved, fix these first: ' + errors.join(' | ') : 'Saved.';
   if (!errors.length) await browser.storage.local.set({ config: ta.value });
 });
 
