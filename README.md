@@ -23,6 +23,7 @@ Edit it on the add-on's options page (`about:addons` > ctxprefs > Preferences). 
 ## Build and test
 
     ./build    # TypeScript -> dist/ with Node's type stripper, no npm; needs Node 23.2 or newer
+    ./pack       # dist/ zipped into ctxprefs.xpi (unsigned; load via about:debugging or an unbranded build)
     ./test     # unit tests (node:test)
 
 Load `dist/manifest.json` through `about:debugging` > This Firefox > Load Temporary Add-on.
